@@ -4,33 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <com.example.manjoor.customseekbarpc.SwagPoints
-            xmlns:swagpoints="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/seekbar_point"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/colorPrimary"
-            android:padding="74dp"
-            swagpoints:arcColor="@color/color_arc"
-            swagpoints:arcWidth="30dp"
-            swagpoints:indicatorIcon="@drawable/indicator"
-            swagpoints:max="1020"
-            swagpoints:min="0"
-            swagpoints:progressColor="@color/color_progress"
-            swagpoints:progressWidth="40dp"
-            swagpoints:step="100"
-            swagpoints:textColor="@color/color_arc"
-            swagpoints:textSize="36sp" />
+    <com.example.manjoor.customseekbarpc.SwagPoints
+        android:id="@+id/circular"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="64dp"
+        app:csb_arcColor="@color/color_arc"
+        app:csb_arcWidth="20dp"
+        app:csb_thumbDrawable="@drawable/ic_circle_seekbar"
+        app:csb_max="1010"
+        app:csb_min="0"
+        app:csb_progress="300"
+        app:csb_progressColor="#00aad4"
+        app:csb_progressWidth="40dp"
+        app:csb_step="100"
+        app:csb_textColor="@color/color_text"
+        app:csb_textSize="36sp"
+        app:csb_thumbSize="60dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/txt_point"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-    </LinearLayout>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/cagliostro"
+        android:gravity="center"
+        android:text="@string/demo_description"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/txt_point"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        tools:text="212"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circular"
+        android:layout_margin="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
 
+    <Button
+        android:visibility="gone"
+        android:id="@+id/change_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change"
+        android:layout_margin="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CustomSeekBarPC</string>
+    <string name="title">Circle Seekbar</string>
+    <string name="demo_description">Demo for Android Circle SeekBar Library \n HienNguyen - An Android Developer</string>
 </resources>
